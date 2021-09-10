@@ -1,0 +1,18 @@
+server:
+  servlet:
+    context-path: /
+  port: 9080
+  compression:
+    enable: true
+    mime-types:
+      - application/json
+      - text/html
+      - text/xml
+spring:
+  r2dbc:
+    username: teste
+    password: teste
+    url: r2dbc:postgresql://172.18.0.3:5432/teste
+
+viacep:
+  url: https://viacep.com.br/ws

@@ -1,0 +1,29 @@
+version: "3"
+services:
+
+
+  teste_db:
+    #image: postgres
+    hostname: postgres_teste_db
+    container_name: teste_db
+    build:
+      context: .
+      dockerfile: Dockerfile.db
+    environment:
+      POSTGRES_PASSWORD: teste
+      POSTGRES_USER: teste
+      POSTGRES_DB: teste
+   # ports:
+   #   - "5439:5432"
+    networks:
+      teste_network:
+        ipv4_address: 172.18.0.3
+
+
+networks:
+  teste_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.18.0.0/16
+        #- gateway: 172.18.0.1

@@ -1,0 +1,4 @@
+FROM postgres:10
+
+ADD banco/init.sql /docker-entrypoint-initdb.d
+
